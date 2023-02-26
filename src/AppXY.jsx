@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AppXY.css';
 
 export default function AppXY() {
@@ -9,11 +9,14 @@ export default function AppXY() {
       className='container' 
       onPointerMove={(e) => {
         console.log(e.clientX, e.clientY);  
-        setX(e.claientX);
+        setX(e.clientX);
         setY(e.clientY);
         }}
       >
-      <div className='pointer' style={{transform: `translate(${x}px, ${y}px)`}}/>
+      <div 
+        className='pointer' 
+        style={{transform: `translate(${x}px, ${y}px)`}}
+        />
     </div>
   );
 }
